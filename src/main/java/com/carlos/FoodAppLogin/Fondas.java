@@ -20,6 +20,7 @@ public class Fondas {
 	public Fondas(String id, String name, String pricelevel, String address, double coordlatitude, double coordaltitude,
 			String description, String businessHours, String neigborhood) {
 		super();
+		
 		this.id = id;
 		this.name = name;
 		this.pricelevel = pricelevel;
