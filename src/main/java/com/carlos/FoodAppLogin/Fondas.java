@@ -15,12 +15,12 @@ public class Fondas {
 	private String description;
 	private String businessHours;
 	private String neigborhood;
-	
+	private String backgroundimageurl;
+	private String thumbnail;
 	
 	public Fondas(String id, String name, String pricelevel, String address, double coordlatitude, double coordaltitude,
-			String description, String businessHours, String neigborhood) {
+			String description, String businessHours, String neigborhood, String backgroundimageurl, String thumbnail) {
 		super();
-		
 		this.id = id;
 		this.name = name;
 		this.pricelevel = pricelevel;
@@ -30,7 +30,22 @@ public class Fondas {
 		this.description = description;
 		this.businessHours = businessHours;
 		this.neigborhood = neigborhood;
+		this.backgroundimageurl = backgroundimageurl;
+		this.thumbnail = thumbnail;
 	}
+	public String getBackgroundimageurl() {
+		return backgroundimageurl;
+	}
+	public void setBackgroundimageurl(String backgroundimageurl) {
+		this.backgroundimageurl = backgroundimageurl;
+	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+	
 	public String getId() {
 		return id;
 	}
