@@ -3,6 +3,7 @@ package com.carlos.FoodAppLogin;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,9 +25,9 @@ public class FondasController {
     }
 
     @RequestMapping(value = "/addfondas", method = RequestMethod.POST)
-    public Fondas addfondas(@RequestBody Fondas fonda){
-    	
-    	return service.addFonda(fonda);
+    public ResponseEntity<String> addfondas(@RequestBody Fondas fonda){
+    	service.addFonda(fonda);
+    	return ResponseEntity.ok("Registered");
     }
 
     
