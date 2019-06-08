@@ -18,6 +18,11 @@ public class FondasService {
 		return userRepo.findAll();
 		
 	}
+	
+	public Fondas addFonda(Fondas fonda){
+		return  userRepo.insert(fonda);
+		
+	}
 		
 		
 }

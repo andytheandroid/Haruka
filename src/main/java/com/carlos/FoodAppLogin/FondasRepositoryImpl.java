@@ -35,8 +35,7 @@ public class FondasRepositoryImpl implements FondasRepository{
 
 	@Override
 	public <S extends Fondas> S insert(S entity) {
-		// TODO Auto-generated method stub
-		return null;
+		return mongoTemplate.insert(entity);
 	}
 
 	@Override
