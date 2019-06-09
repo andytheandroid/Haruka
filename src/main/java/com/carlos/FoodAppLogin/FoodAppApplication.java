@@ -20,7 +20,7 @@ public class FoodAppApplication {
 	      return new WebMvcConfigurerAdapter() {
 	         @Override
 	         public void addCorsMappings(CorsRegistry registry) {
-	            registry.addMapping("/products").allowedOrigins("https://loginbackend.herokuapp.com/");
+	            registry.addMapping("/**").allowedOrigins("https://loginbackend.herokuapp.com/");
 	         }
 	      };
 	   }
