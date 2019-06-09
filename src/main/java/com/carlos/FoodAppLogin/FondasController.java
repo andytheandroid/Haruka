@@ -18,7 +18,7 @@ public class FondasController {
 	@Autowired
 	private FondasService service;
 	
-    @CrossOrigin(origins = "https://murmuring-dawn-57579.herokuapp.com/index.html")
+    @CrossOrigin(origins = "http://localhost:8087")
     @RequestMapping(value = "/getfondas", method = RequestMethod.POST)
     public List<Fondas> getfondas(){
     	
