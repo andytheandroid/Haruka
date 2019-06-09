@@ -9,17 +9,9 @@ public class FoodAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FoodAppApplication.class, args);
-		corsConfigure();
 		System.out.println("Prepare for automatic deploy in heroku");
 	}
 
 	
-	 public static WebMvcConfigurer corsConfigurer() {
-	        return new WebMvcConfigurer() {
-	            @Override
-	            public void addCorsMappings(CorsRegistry registry) {
-	                registry.addMapping("/greeting-javaconfig").allowedOrigins("https://murmuring-dawn-57579.herokuapp.com/");
-	            }
-	        };
-	    }
+	
 }
