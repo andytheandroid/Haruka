@@ -9,69 +9,71 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FondasRepositoryImpl implements FondasRepository{
+public class CommentsRepositoryImpl implements CommentsRespository {
 
 	@Autowired
-   MongoTemplate mongoTemplate;
+	   MongoTemplate mongoTemplate;
 
 	@Override
-	public <S extends Fondas> List<S> saveAll(Iterable<S> entities) {
+	public <S extends Comments> List<S> saveAll(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Fondas> findAll() {
-		// TODO Auto-generated method stub
-		return mongoTemplate.findAll(Fondas.class);
-	}
-
-	@Override
-	public List<Fondas> findAll(Sort sort) {
+	public List<Comments> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Fondas> S insert(S entity) {
+	public List<Comments> findAll(Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Comments> S insert(S entity) {
 		return mongoTemplate.insert(entity);
 	}
 
 	@Override
-	public <S extends Fondas> List<S> insert(Iterable<S> entities) {
+	public <S extends Comments> List<S> insert(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Fondas> List<S> findAll(Example<S> example) {
+	public <S extends Comments> List<S> findAll(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Fondas> List<S> findAll(Example<S> example, Sort sort) {
+	public <S extends Comments> List<S> findAll(Example<S> example, Sort sort) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Page<Fondas> findAll(Pageable pageable) {
+	public Page<Comments> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Fondas> S save(S entity) {
+	public <S extends Comments> S save(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Optional<Fondas> findById(String id) {
+	public Optional<Comments> findById(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -83,7 +85,7 @@ public class FondasRepositoryImpl implements FondasRepository{
 	}
 
 	@Override
-	public Iterable<Fondas> findAllById(Iterable<String> ids) {
+	public Iterable<Comments> findAllById(Iterable<String> ids) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -101,13 +103,13 @@ public class FondasRepositoryImpl implements FondasRepository{
 	}
 
 	@Override
-	public void delete(Fondas entity) {
+	public void delete(Comments entity) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteAll(Iterable<? extends Fondas> entities) {
+	public void deleteAll(Iterable<? extends Comments> entities) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -119,35 +121,39 @@ public class FondasRepositoryImpl implements FondasRepository{
 	}
 
 	@Override
-	public <S extends Fondas> Optional<S> findOne(Example<S> example) {
+	public <S extends Comments> Optional<S> findOne(Example<S> example) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Fondas> Page<S> findAll(Example<S> example, Pageable pageable) {
+	public <S extends Comments> Page<S> findAll(Example<S> example, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public <S extends Fondas> long count(Example<S> example) {
+	public <S extends Comments> long count(Example<S> example) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public <S extends Fondas> boolean exists(Example<S> example) {
+	public <S extends Comments> boolean exists(Example<S> example) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public List<Fondas> getAllFondas() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 	
 
+	@Override
+	public List<Comments> findCommentsForTheCurrentFonda(String idfonda) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("idfonda").is(idfonda));
+		List<Comments> comments = mongoTemplate.find(query, Comments.class);
+		return comments;
+	}
+
+
+	
 }
