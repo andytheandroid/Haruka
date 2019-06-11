@@ -26,7 +26,8 @@ public class FondasController {
 
     @RequestMapping(value = "/addfondas", method = RequestMethod.POST)
     public ResponseEntity<String> addfondas(@RequestBody Fondas fonda){
-    	service.addFonda(fonda);
+    	Fondas x = service.addFonda(fonda);
+    	System.out.println(x);
     	return ResponseEntity.ok("Registered");
     }
 
