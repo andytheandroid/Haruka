@@ -18,8 +18,8 @@ public class FondasController {
 	@Autowired
 	private FondasService service;
 	
-    @RequestMapping(value = "/getfondas", method = RequestMethod.POST)
-    public List<Fondas> getfondas(){
+    @RequestMapping(value = "/getRestaurants", method = RequestMethod.POST)
+    public List<Fondas> getRestaurants(){
     	
     	return service.getFondas();
     }
