@@ -18,9 +18,9 @@ public class CommentsController {
 	private CommentsService service;
 
 	@PostMapping("/getComments")
-    public List<Comments> getComments(@RequestParam String idfonda){
+    public List<Comments> getComments(@RequestParam String idrestaurant){
     	
-    	return service.getComments(idfonda);
+    	return service.getComments(idrestaurant);
     }
     
    
